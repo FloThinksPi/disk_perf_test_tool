@@ -11,14 +11,11 @@ apt-get update
 apt-get -y install git python-pip virtualenv python-dev
 
 cd /tmp
-mkdir venv
-cd venv
-virtualenv --no-setuptools .
-
-cd /tmp
-git clone http://github.com/openstack/oslo.messaging
-source venv/bin/activate
+virtualenv --no-setuptools venv
+git clone http://github.com/openstack/oslo.messaging -b stable/mitaka
+source /tmp/venv/bin/activate
 pip install setuptools
-pip install eventlet PyYAML oslo.messaging petname redis zmq pika_pool
 cd oslo.messaging
-pip install .
+python setup.py install
+pip install eventlet PyYAML oslo.messaging petname redis zmq pika_pool scipy numpy
+pip install kombu
