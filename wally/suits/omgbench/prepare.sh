@@ -8,7 +8,7 @@ exit 0
 fi
 
 apt-get update
-apt-get -y install git python-pip virtualenv python-dev
+apt-get -y --force-yes install git python-pip virtualenv python-dev
 
 cd /tmp
 virtualenv --no-setuptools venv
