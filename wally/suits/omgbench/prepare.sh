@@ -12,7 +12,7 @@ apt-get -y --force-yes install git python-pip virtualenv python-dev
 
 cd /tmp
 virtualenv --no-setuptools venv
-git clone http://github.com/openstack/oslo.messaging -b stable/mitaka
+git clone http://github.com/openstack/oslo.messaging -b stable/newton
 source /tmp/venv/bin/activate
 pip install setuptools
 cd oslo.messaging
